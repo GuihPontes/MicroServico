@@ -2,24 +2,29 @@
 {
     public class ProductVO
     {
-        public ProductVO(long id, string nome, decimal preco, string descricao, string categoria, bool isFavorito, string imageUrl)
+        public ProductVO()
+        {
+
+        }
+        public ProductVO(long id, string nome, decimal preco, string descricao, string categoria, string url)
         {
             Id = id;
             Nome = nome;
             Preco = preco;
             Descricao = descricao;
             Categoria = categoria;
-            IsFavorito = isFavorito;
-            ImageUrl = imageUrl;
+            URL = url;
+            
         }
 
-        public long Id { get; set; }
-        public string Nome { get; set; }
-        public decimal Preco { get; set; }
-        public string Descricao { get; set; }
-        public string Categoria { get; set; }
-        public bool IsFavorito { get; set; }
-        public string ImageUrl { get; set; }
+        public long? Id { get; set; }
+        public string? Nome { get; set; }
+        public decimal? Preco { get; set; }
+        public string? Descricao { get; set; }
+        public string? Categoria { get; set; }
+        public string? URL { get; set; }
+
+    
 
     }
 }

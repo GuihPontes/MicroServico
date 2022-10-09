@@ -25,7 +25,7 @@ namespace GeekShopping.ProductAPI.Repository
             return  _mapper.Map<List<ProductVO>>(products);
         }
 
-        public async Task<ProductVO> BuscarTodos(long id)
+        public async Task<ProductVO> BuscarProduto(long id)
         {
             var productus = await _context.Produtos.
                                                     Where(p=>p.Id == id).

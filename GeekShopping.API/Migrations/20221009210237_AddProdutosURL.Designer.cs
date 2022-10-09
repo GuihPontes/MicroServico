@@ -3,6 +3,7 @@ using System;
 using GeekShopping.ProductAPI.Model.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GeekShopping.ProductAPI.Migrations
 {
     [DbContext(typeof(MySqlContext))]
-    partial class MySqlContextModelSnapshot : ModelSnapshot
+    [Migration("20221009210237_AddProdutosURL")]
+    partial class AddProdutosURL
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,6 +38,11 @@ namespace GeekShopping.ProductAPI.Migrations
                         .HasColumnType("varchar(500)")
                         .HasColumnName("Descricao");
 
+                    b.Property<string>("ImagemURL")
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar(300)")
+                        .HasColumnName("ImagemURL");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -48,8 +55,7 @@ namespace GeekShopping.ProductAPI.Migrations
                         .HasColumnName("Preco");
 
                     b.Property<string>("URL")
-                        .HasMaxLength(300)
-                        .HasColumnType("varchar(300)")
+                        .HasColumnType("longtext")
                         .HasColumnName("URL");
 
                     b.HasKey("Id");

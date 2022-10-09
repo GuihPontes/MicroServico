@@ -6,7 +6,7 @@ namespace GeekShopping.ProductAPI.Repository
     public interface IProductRepository
     {
         Task<IEnumerable<ProductVO>> BuscarTodos();
-        Task<ProductVO> BuscarTodos(long id);
+        Task<ProductVO> BuscarProduto(long id);
         Task<ProductVO> Criar(ProductVO product);
         Task<ProductVO> Atulizar(ProductVO product);
         Task<bool> Deletar(long id);
