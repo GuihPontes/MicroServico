@@ -1,6 +1,7 @@
 using AutoMapper;
 using GeekShopping.ProductAPI.Config;
 using GeekShopping.ProductAPI.Model.Context;
+using GeekShopping.ProductAPI.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -21,6 +22,10 @@ builder.Services.AddDbContext<MySqlContext>(opc=> opc.UseMySql(conncetion,new My
     IMapper mapper = MappingConfig.Mapper().CreateMapper();
     builder.Services.AddSingleton(mapper);
     builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+#endregion
+
+#region Repositorio
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 #endregion
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
