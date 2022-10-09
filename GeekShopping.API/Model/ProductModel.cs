@@ -35,6 +35,11 @@ namespace GeekShopping.ProductAPI.Model
         [StringLength(50)]
         public string Categoria { get; set; }
 
+        [Column("Favorito")]
+        [Required]
+        
+        public bool IsFavorito { get; set; }
+
         [Column("ImagemURL")]
         [Required]
         // URL so funciona até 255 caracters
